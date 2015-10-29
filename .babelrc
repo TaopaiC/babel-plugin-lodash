@@ -1,4 +1,5 @@
 {
   // Run it on itself
   // "plugins": ["./lib/index"]
+  "presets": ["es2015"]
 }

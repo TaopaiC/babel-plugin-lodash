@@ -1,7 +1,7 @@
 import resolveModule from './lodash-modules';
 import _ from 'lodash';
 
-export default function({ Plugin, types: t }) {
+export default function({ types: t }) {
   // Tracking variables build during the AST pass. We instantiate
   // these in the `Program` visitor in order to support running the
   // plugin in watch mode or on multiple files. 
@@ -19,7 +19,7 @@ export default function({ Plugin, types: t }) {
 
   const CHAIN_ERR = 'lodash chaining syntax is not yet supported';
 
-  return new Plugin('lodash', {
+  return {
     visitor: {
 
       // Instantiate all the necessary tracking variables for this AST.
@@ -105,5 +105,5 @@ export default function({ Plugin, types: t }) {
       }
     }
 
-  });
+  };
 }
